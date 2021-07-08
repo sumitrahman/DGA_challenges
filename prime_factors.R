@@ -50,3 +50,26 @@ list_prime_factors <- function(n) {
   }
   return(result)
 }
+
+unique_prime_factorisation <- function(n){
+  if (!is.numeric(n) |
+      length(n) != 1 | !identical(n, round(n)) | !sign(n) == 1) {
+    stop("Your input must be a single, positive integer")
+  } else if (n == 1) {
+    upf <- "1 has no prime factors; the UPF is 1"
+  } else {
+    upf <- c()
+    divisor <- 2
+    dividend <- n
+    while(dividend >= divisor){
+      if(dividend %% divisor == 0){
+        upf <- c(upf, divisor)
+        dividend <- dividend / divisor
+      }else{
+        divisor <- divisor + 1
+      }
+    }
+  }
+    
+    return(upf)
+}
