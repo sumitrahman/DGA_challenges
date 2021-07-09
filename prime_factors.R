@@ -11,7 +11,7 @@ list_factors <- function(n) {
 
     list_of_proper_factors <- candidates[are_they_factors]
     list_of_proper_factors <-
-      c(list_of_proper_factors, N / list_of_proper_factors)
+      c(list_of_proper_factors, n / list_of_proper_factors)
     list_of_proper_factors <- unique(list_of_proper_factors)
   }
 
@@ -72,4 +72,12 @@ unique_prime_factorisation <- function(n){
   }
     
     return(upf)
+}
+
+list_prime_factors2 <- function(n){
+  upf <- unique_prime_factorisation(n)
+  result <-
+    paste0(c("The prime factors are:", unique(upf)), collapse = " ")
+  
+  return(result)
 }
