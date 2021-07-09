@@ -1,6 +1,11 @@
 # coding challenge week ending 9 July
 # Find the prime factors of the input number
 
+# two methods used: list_prime_factors() finds all factors then selects the
+# prime (by finding how many factors each factor has); list_prime_factors2()
+# finds the unique prime factorisation of the input by repreated division, then
+# returns the UPF with duplicates removed
+
 list_factors <- function(n) {
   if (n %in% 2:3) {
     list_of_proper_factors <- numeric(0)
